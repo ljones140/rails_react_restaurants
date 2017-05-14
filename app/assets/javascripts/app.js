@@ -8,6 +8,7 @@ var Store = new _.extend({}, EventEmitter.prototype, {
   _comments: [],
 
   addComment: function(comment) {
+    console.log(comment)
     this._comments[comment.id]= comment;
   },
 
@@ -35,8 +36,19 @@ AppDispatcher.register(function(payload) {
   switch(action) {
     case Constants.ADD_COMMENT:
       Store.addComment(payload.comment);
+      Store.emitChange();
       break;
     default:
       // NO-OP
+  }
+});
+
+// Actions
+var Actions = new _.extend({}, {
+  addComment: function(params) {
+    AppDispatcher.dispatch({
+      actionType: Constants.ADD_COMMENT,
+      comment: params
+    });
   }
 });
