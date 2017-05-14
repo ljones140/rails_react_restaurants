@@ -34,6 +34,8 @@ gem 'ancestry'
 gem 'rails_admin'
 gem 'foundation-rails', '~> 5.0'
 gem 'react-rails'
+gem 'flux-rails-assets'
+gem 'lodash-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
