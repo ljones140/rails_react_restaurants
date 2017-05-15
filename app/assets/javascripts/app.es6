@@ -1,8 +1,4 @@
 // Store
-const Constants = {
-  CHANGE_EVENT: 'change',
-  ADD_COMMENT: 'comments.add'
-}
 
 class Store extends EventEmitter {
 
